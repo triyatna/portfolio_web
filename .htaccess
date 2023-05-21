@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /(.*)/$
+RewriteRule ^ /%1 [R=301,L]
+
+
+RewriteRule ^article/(.+)/?$ single_article.php?id=$1
+RewriteRule ^sitemap\.xml/?$ sitemap.php
+
